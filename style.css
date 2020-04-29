@@ -1,63 +1,259 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates&display=swap");
-:root {
-  font-size: 16px;
-  font-family: 'Roboto Slab';
+html {
+  font-size: 10px;
+  font-family: 'Roboto Slab', sans-serif;
+  box-sizing: border-box;
+  --bg-primary: #F3E9F1;
+  --txt-primary: #34495E;
 }
-
-body {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
 }
 
-main {
-  margin-left: 5rem;
-  padding: 1rem;
+ul {
+  list-style: none;
 }
-
-.navbar {
-  width: 100vw;
-  height: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #F3E9F1;
+p {
+  font-size: 1.6rem;
 }
-
-.navbar__logo {
+.logo {
+  height: auto;
   width: 10rem;
 }
+section {
+  padding: 5rem 0;
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+header {
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+  top: 0;
+  left: 0;
+  background: var(--bg-primary);
+  z-index: 1;
+}
 
-.navbar__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.container {
+  width: 100%;
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+nav {
+  width: 100%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-size: 1.2em;
-  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.nav-brand{
+  width: 2rem;
+}
+
+.menu-icons i {
+  font-size: 3.5rem;
+  color: #fafafa;
+  cursor: pointer;
+}
+
+.fa-times-circle {
+  color: rgb(240, 65, 65);
+}
+
+.nav-list {
+  width: 25rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -30rem;
+  background-color: #D7D4ED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all 500ms ease-in-out;
+}
+
+.nav-list.active {
+  right: 0;
+}
+.close {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+.nav-item {
+  margin: 1.5rem 0;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.7);
+}
+
+.hero {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  background: linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%),
+  url("/img/vintage-camera-lenses.jpg") center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 15rem;
+  background-size: cover;
+  background: url(/img/wave.png) no-repeat;
+}
+
+.main-message {
+  width: 100%;
+  max-width: 50rem;
+  color: #fafafa;
+  text-align: center;
+  justify-content: center;
+}
+.main-message h1 {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 4rem;
+  margin: 1rem 0;
 }
 
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #F3E9F1;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-color: var(--bg-primary);
+  justify-content: center;
 }
-/*# sourceMappingURL=style.css.map */
+
+/*** page - index ***/
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 3rem;
+}
+
+.title-item {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 8rem;
+  color: rgba(0,0,0,.7);
+  font-size: 1.6rem;
+}
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 45rem;
+  padding: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.grid-item p {
+  font-size: 1.4rem;
+}
+.grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-image: url(/JWDP5/images/vcam_1.jpg);
+}
+/* media queries */
+@media screen and (min-width: 1920px) {
+  .hero::before {
+    background: none;
+  }
+}
+@media screen and (min-width: 700px) {
+  .nav-list {
+    flex-direction: row;
+    background-color: transparent;
+    top: initial;
+    right: initial;
+    width: initial;
+    position: initial;
+    transition: initial;
+    height: initial;
+  }
+  .menu-icons {
+    display: none;
+  }
+  .nav-item{
+    margin: 0 2.5rem;
+  }
+  .nav-link {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    background-color: rgba(72,56,149,0.8);
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 700ms;
+  }
+
+  .nav-link:hover::before {
+    transform:scaleX(1);
+  }
+
+  .main-message {
+    transform: translateY(30%);
+  }
+  .title-item {
+    font-size: 2rem;
+  }
+}
+
+/*** page - panier ***/
+.btn {
+  background-color: rgba(49,24,131,0.9);
+  border-radius: 2rem;
+  color: #fafafa;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  transition: background-color 650ms;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  background-color: #ce587b;
+}

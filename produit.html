@@ -3,17 +3,62 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
+    <meta name="description" content="Orinoco - Site web spécialisé à la vente d'appareils photos vintage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Fiche produit - Orinoco</title>
 </head>
 
 <body>
+
     <header>
-        <img src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
+        <div class="container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="index.html">
+                        <img class="logo" src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
+                    </a>
+                </div>
+                <div class="menu-icons open">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <div class="menu-icons close">
+                        <i class="far fa-times-circle"></i>
+                    </div>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Accueil</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Compte</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Favoris</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a href="panier.html" class="nav-link">Panier</a> 
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="main-message">
+                <h1>Photographie</h1>
+                <p>Découvrez nos appareils photos vintage</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2>Orinoco</h2>
+    </footer>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
 </body>
 </html>

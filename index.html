@@ -6,28 +6,117 @@
     <meta name="description" content="Orinoco - Site web spécialisé à la vente d'appareils photos vintage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Nos produits - Orinoco</title>
 </head>
 
 <body>
-    <header class="navbar">
-        <img class="navbar__logo" src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
-        <nav class="navbar__nav">
-            <li class="navbar__nav--item">
-                <a href="index.html">Accueil</a>
-            </li>
-            <li class="navbar__nav--item">
-                <a href="panier.html">Panier</a>
-            </li>
-        </nav>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="index.html">
+                        <img class="logo" src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
+                    </a>
+                </div>
+                <div class="menu-icons open">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <div class="menu-icons close">
+                        <i class="far fa-times-circle"></i>
+                    </div>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Compte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Favoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="panier.html" class="nav-link">Panier</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-
+        <section class="hero">
+            <div class="container">
+                <div class="main-message">
+                    <h1>Photographie</h1>
+                    <p>Découvrez nos appareils photos vintage</p>
+                </div>
+            </div>
+        </section>
+        <section class="all-products">
+            <div class="container">
+                <div class="grid-products">
+                    <!--grid item 1-->
+                    <div class="grid-item">
+                        <h3 class="title-item">Contina J, 1964</h3>
+                        <p>Prontor 300. Pantar 2.8/45mm. Mise au point par hélicoïdale. 
+                            Cellule couplée avec réglage dans le viseur et renvoi de vitesses.
+                        </p>
+                        <div class="cta">
+                            <a href="produit.html" class="btn">Fiche produit</a>
+                        </div>
+                    </div>
+                    <!--grid item 2-->
+                    <div class="grid-item">
+                        <h3 class="title-item">Contina J, 1964</h3> 
+                        <p>Prontor 300. Pantar 2.8/45mm. Mise au point par hélicoïdale. 
+                            Cellule couplée avec réglage dans le viseur et renvoi de vitesses.
+                        </p>
+                        <div class="cta">
+                            <a href="produit.html" class="btn">Fiche produit</a>
+                        </div>
+                    </div>
+                    <!--grid item 3-->
+                    <div class="grid-item">
+                        <h3 class="title-item">Contina J, 1964</h3> 
+                        <p>Prontor 300. Pantar 2.8/45mm. Mise au point par hélicoïdale. 
+                            Cellule couplée avec réglage dans le viseur et renvoi de vitesses.
+                        </p>
+                        <div class="cta">
+                            <a href="produit.html" class="btn">Fiche produit</a>
+                        </div>
+                    </div>
+                    <!--grid item 4-->
+                    <div class="grid-item">
+                        <h3 class="title-item">Contina J, 1964</h3> 
+                        <p>Prontor 300. Pantar 2.8/45mm. Mise au point par hélicoïdale. 
+                            Cellule couplée avec réglage dans le viseur et renvoi de vitesses.
+                        </p>
+                        <div class="cta">
+                            <a href="produit.html" class="btn">Fiche produit</a>
+                        </div>
+                    </div>
+                    <!--grid item 5-->
+                    <div class="grid-item">
+                        <h3 class="title-item">Contina J, 1964</h3> 
+                        <p>Prontor 300. Pantar 2.8/45mm. Mise au point par hélicoïdale. 
+                            Cellule couplée avec réglage dans le viseur et renvoi de vitesses.
+                        </p>
+                        <div class="cta">
+                            <a href="produit.html" class="btn">Fiche produit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <h2>Orinoco</h2>
     </footer>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
 </body>
+
 </html>
