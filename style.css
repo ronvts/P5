@@ -1,5 +1,5 @@
 html {
-  font-size: 8px;
+  font-size: 7px;
   font-family: 'Lato', sans-serif;
   --bg-primary: #e8eaf693;
 }
@@ -84,7 +84,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 8rem;
   border-top: solid 5px var(--bg-primary);
@@ -300,7 +300,7 @@ footer {
 }
 .form-btn {
   padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 .custom {
   width: 100%;
@@ -468,6 +468,13 @@ tr {
   font-weight: 600;
   padding-bottom: 15vh;
 }
+
+.footer-fixed {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 @media screen and (min-width: 768px) {
   .cart {
     padding: 0 7rem;
@@ -481,6 +488,7 @@ tr {
   .header-cart {
     font-size: 2.5rem;
     padding-bottom: 2rem;
+    padding-top: 5rem;
   }
   .header-form {
     font-size: 2.5rem;
@@ -496,7 +504,6 @@ tr {
     padding: 4vh 15vw;
   }
   .header-cart {
-    padding-top: 4rem;
     font-size: 2.7rem;
   }
   .header-form {
@@ -507,15 +514,9 @@ tr {
     width: 100%;
     height: 3rem;
   }
-  .footer-fixed {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin-top: 8vh;
-  }
   #sendForm {
     font-size: 2.5rem;
+    margin-bottom: 15rem;
   }
 }
 
