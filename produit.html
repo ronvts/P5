@@ -6,59 +6,72 @@
     <meta name="description" content="Orinoco - Site web spécialisé à la vente d'appareils photos vintage">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Fiche produit - Orinoco</title>
 </head>
 
 <body>
-
     <header>
-        <div class="container">
-            <nav>
-                <div class="nav-brand">
-                    <a href="index.html">
-                        <img class="logo" src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
-                    </a>
-                </div>
-                <div class="menu-icons open">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-list">
-                    <div class="menu-icons close">
-                        <i class="far fa-times-circle"></i>
-                    </div>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Accueil</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Compte</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Favoris</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a href="panier.html" class="nav-link">Panier</a> 
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="main-message">
-                <h1>Photographie</h1>
-                <p>Découvrez nos appareils photos vintage</p>
+        <nav>
+            <div>
+                <a href="index.html">
+                    <img class="logo" src="./img/Logo-Orinoco.png" alt="Logo d'Orinoco">
+                </a>
             </div>
-        </div>
-    </section>
-    <footer>
-        <h2>Orinoco</h2>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i></a>
+                </li>
+                <li class="nav-item cart-nb">
+                    <a href="panier.html" class="nav-link"><i class="fas fa-shopping-cart"></i>
+                        <span class="nb-items">0</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="product">
+        <section class="page-product">
+                <div class="view-left">
+                    <p class="item-id"></p>
+                    <div class="item-image">
+                        <img class="img-item" src="" alt="">
+                    </div>
+                </div>
+                <div class="form-product">
+                    <h3 class="item-name"></h3>
+                    <div class="form-price">
+                        <p class="item-price"> /unité</p>
+                    </div>
+                    <p class="item-description"></p>
+                    <form class="form-item" method="GET" action="panier.html">
+                        <div class="form-lense">
+                            <label class="label" for="customize">Choisissez un objectif :</label>
+                            <br>
+                            <select class="custom" name="lenses" id="customize" required>
+                            </select>
+                        </div>
+                        <div class="form-qty">
+                            <label class="label" for="qty">Quantité</label>
+                            <br>
+                            <input class="custom" type="number" id="qty" value="1" min="1" max="10" required>
+                        </div>
+                    </form>
+                    <div class="form-btn">
+                        <button class="btn add-cart">Ajouter au panier</button>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer class="footer-fixed">
+        <h3>© Orinoco</h3>
     </footer>
-    <script type="text/javascript" src="app.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/produit.js"></script>
+    <script src="./js/main.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
 </body>
+
 </html>
