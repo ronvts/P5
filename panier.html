@@ -62,16 +62,16 @@
         <h2 class="header-form">Merci de remplir le formulaire afin de valider la commande :</h2>
         <form id="form">
             <div class="form-group">
-                <input type="text" required name="lastName" id="lastName" placeholder="Nom*" class="input-form">
+                <input type="text" pattern="[A-Za-z ]{2,32}" required name="lastName" id="lastName" placeholder="Nom*" class="input-form">
             </div>
             <div class="form-group">
-                <input type="text" required name="firstName" id="firstName" placeholder="Prénom*" class="input-form">
+                <input type="text" pattern="[A-Za-z ]{2,32}" required name="firstName" id="firstName" placeholder="Prénom*" class="input-form">
             </div>
             <div class="form-group">
                 <input type="text" required name="adress" id="address" placeholder="Adresse de livraison*" class="input-form">
             </div>
             <div class="form-group">
-                <input type="text" required name="city" id="city" placeholder="Ville" class="input-form">
+                <input type="text" pattern="[A-Za-z ]{2,32}"required name="city" id="city" placeholder="Ville*" class="input-form">
             </div>
             <div class="form-group">
                 <input type="email" required name="email" id="email" placeholder="Email*" class="input-form">

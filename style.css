@@ -387,6 +387,7 @@ footer {
 .view-form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 8rem;
 }
 .header-cart {
   font-size: 2rem;
@@ -516,7 +517,6 @@ tr {
   }
   #sendForm {
     font-size: 2.5rem;
-    margin-bottom: 15rem;
   }
 }
 

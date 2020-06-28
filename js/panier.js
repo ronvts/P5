@@ -91,7 +91,7 @@ function sendData() {
 			const contact = document.getElementById('contact')
 			const alert = contact.appendChild(document.createElement('div')) // Crée un bloc d'affichage
 			alert.classList.add('error') // Traitement CSS du message d'erreur
-			alert.innerText = 'Veuillez vérifier les champs du formulaire !' // Message pour l'utilisateur
+			alert.innerText = 'Veuillez vérifier les champs du formulaire.' // Message pour l'utilisateur
 		} else if (form.checkValidity() === true) { //Si le formulaire est valide
 			let getOrderId = response.orderId; //On obient un id de la commande
 			let getTotalCost = totalCartCost.innerHTML;
