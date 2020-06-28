@@ -8,6 +8,7 @@ body {
   height: 100vh;
   margin: auto;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -56,10 +57,12 @@ nav {
   display: flex;
 
 }
-.nav-item{
+
+.nav-item {
   display: flex;
   flex-direction: row;
 }
+
 .nav-link {
   font-size: 2rem;
   color: rgba(2, 2, 2, 0.842);
@@ -76,6 +79,7 @@ nav {
   margin-left: -5px;
   position: absolute;
 }
+
 /* fin - Navigation */
 
 /* Footer */
@@ -97,9 +101,11 @@ footer {
   color: #fafafa;
   display: flex;
 }
+
 .social li {
   padding: 2rem;
 }
+
 /*** Page - INDEX ***/
 /* Bannière de présentation */
 
@@ -111,13 +117,14 @@ footer {
   background-color: rgba(0, 0, 0, 0.582);
   width: fit-content;
 }
+
 .hero-message h2 {
   font-family: 'Muli', sans-serif;
   font-weight: 600;
   font-size: 2rem;
 }
 
-.hero{
+.hero {
   display: flex;
   background-size: cover;
   background-repeat: no-repeat;
@@ -127,6 +134,7 @@ footer {
   flex-direction: column;
   justify-content: center;
 }
+
 .hero-up {
   background-image: url(img/vintage-camera-haut.jpg);
 }
@@ -158,29 +166,36 @@ footer {
   border: 2px solid var(--bg-primary);
   margin-bottom: 3rem;
 }
+
 .product-info:hover {
   transform: translateY(-20px);
 }
+
 .img-index {
   width: 100%;
   margin-bottom: 2rem;
 }
+
 .product-name {
   font-size: 2.3rem;
   padding-bottom: 2rem;
 }
+
 .product-price {
   font-size: 2.3rem;
 }
+
 .product-description {
   padding: 0 2rem 2rem 2rem;
 }
+
 .product-description p {
   font-size: 2.2rem;
   font-family: 'Muli';
 }
+
 .btn {
-  background-color: rgba(49,24,131,0.9);
+  background-color: rgba(49, 24, 131, 0.9);
   border-radius: 60px;
   color: #fafafa;
   display: inline-block;
@@ -198,46 +213,58 @@ footer {
   .nav-link {
     margin: 0 0 0 2rem;
   }
+
   #grid-products {
     display: flex;
     flex-direction: column;
   }
 }
+
 @media screen and (min-width: 768px) {
-  .nav-item{
+  .nav-item {
     margin: 0 4rem;
   }
+
   .hero-message {
     padding-left: 7rem;
   }
+
   .logo {
     margin-left: 7rem;
   }
+
   #grid-products {
     padding: 3rem 7rem;
   }
+
   .hero-message h2 {
     font-size: 3rem;
   }
+
   .social {
     font-size: 4rem;
   }
 }
+
 @media screen and (min-width: 1100px) {
   .logo {
     width: 24rem;
   }
+
   header {
     height: 10rem;
   }
+
   .nav-link {
     font-size: 2.8rem;
   }
+
   footer {
     height: 10rem;
     font-size: 2rem;
   }
 }
+
 /* fin - Media Queries */
 
 /* Page produit */
@@ -249,6 +276,7 @@ footer {
   justify-content: center;
   padding: 3rem;
 }
+
 .view-left {
   display: flex;
   flex-direction: column;
@@ -261,6 +289,7 @@ footer {
 .img-item {
   width: 100%;
 }
+
 .item-name {
   font-size: 2.3rem;
   margin: 2.5rem 0;
@@ -285,23 +314,28 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
 .form-product {
-  display: flex; 
+  display: flex;
   flex-direction: column;
   padding: 2rem;
 }
+
 .form-lense {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .item-id {
   display: none;
 }
+
 .form-btn {
   padding-top: 1rem;
   padding-bottom: 5rem;
 }
+
 .custom {
   width: 100%;
   background-color: var(--bg-primary);
@@ -316,54 +350,67 @@ footer {
     width: 30%;
     font-size: 2.5rem;
   }
+
   .label {
     font-size: 2.5rem;
   }
+
   .product {
     justify-content: flex-start;
     padding: 7rem;
     margin: 5vh 0;
   }
+
   .page-product {
     display: flex;
     flex-direction: row;
   }
+
   .view-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
   }
+
   .form-product {
     width: 50%;
     padding: 0 10vw;
   }
+
   .form-lense {
     flex-direction: column;
     padding: 0;
   }
+
   .item-name {
     font-size: 3rem;
   }
+
   .item-price {
     padding-bottom: 1rem;
     padding-top: 3rem;
     font-size: 2.5rem;
   }
+
   .form-quantity {
     padding-top: 4rem;
   }
+
   .item-description {
     font-size: 2.4rem;
     padding-bottom: 4rem;
     padding-top: 3rem;
   }
+
   .form-btn {
     padding-top: 4rem;
   }
+
   .add-cart {
     font-size: 1.8rem;
   }
+
   .btn {
     font-size: 2.5rem;
   }
@@ -378,43 +425,52 @@ footer {
   text-align: center;
   align-items: center;
 }
+
 .view-cart {
   display: flex;
   flex-direction: column;
   margin-bottom: 4vh;
   width: 100%;
 }
+
 .view-form {
   display: flex;
   flex-direction: column;
   margin-bottom: 8rem;
 }
+
 .header-cart {
   font-size: 2rem;
   padding-top: 2rem;
   text-transform: uppercase;
 }
+
 .header-form {
   font-size: 2rem;
 }
+
 #table-cart {
   width: 100%;
   font-size: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
 }
+
 #thead-cart {
   background-color: var(--bg-primary);
   color: rgba(20, 20, 20, 0.911);
   text-transform: uppercase;
   font-size: 1.5rem;
 }
+
 th {
   font-size: 1.3rem;
 }
+
 tr {
   height: 5vh;
 }
+
 #tfoot-cart {
   background-color: var(--bg-primary);
 }
@@ -430,6 +486,7 @@ tr {
   height: 2.5rem;
   font-size: 1.5rem;
 }
+
 .btn:hover {
   background-color: #ce587b;
 }
@@ -449,6 +506,7 @@ tr {
   padding-bottom: 10px;
   margin-top: 10px;
 }
+
 .btn-remove {
   color: white;
   background-color: rgba(231, 44, 44, 0.712);
@@ -463,6 +521,7 @@ tr {
 .btn-remove:hover {
   background-color: rgb(124, 33, 33);
 }
+
 .error {
   font-size: 3rem;
   color: rgb(124, 33, 33);
@@ -476,45 +535,56 @@ tr {
   bottom: 0;
   left: 0;
 }
+
 @media screen and (min-width: 768px) {
   .cart {
     padding: 0 7rem;
   }
+
   th {
     font-size: 2rem;
   }
+
   td {
     font-size: 2rem;
   }
+
   .header-cart {
     font-size: 2.5rem;
     padding-bottom: 2rem;
     padding-top: 5rem;
   }
+
   .header-form {
     font-size: 2.5rem;
     padding-bottom: 2rem;
   }
+
   .input-form {
     font-size: 2.2rem;
     width: 80%;
   }
 }
+
 @media screen and (min-width: 1100px) {
   #table-cart {
     padding: 4vh 15vw;
   }
+
   .header-cart {
     font-size: 2.7rem;
   }
+
   .header-form {
     padding-bottom: 3rem;
     font-size: 2.7rem;
   }
+
   .input-form {
     width: 100%;
     height: 3rem;
   }
+
   #sendForm {
     font-size: 2.5rem;
   }
