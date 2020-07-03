@@ -58,5 +58,6 @@ button.addEventListener('click', function (event) { //Évènement au click sur l
         panier.push(order) // Envoie l'objet de commande
         const stringOrder = JSON.stringify(panier) //Transforme l'objet order en chaine de caractères
         localStorage.setItem('panier', stringOrder) //Stock la réponse dans le localStorage dans une catégorie 'panier'
+        window.location.reload()
 })
 
