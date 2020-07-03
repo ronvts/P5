@@ -51,6 +51,7 @@ let removeCartItem = document.getElementsByClassName('btn-remove') // Sélection
 		buttonClicked.parentElement.parentElement.remove()
 		panier.splice(index, 1) // Supprime la ligne du panier
 		localStorage.setItem('panier', JSON.stringify(panier)) // Actualise l'objet panier du localStorage
+		window.location.reload()
 	})
 }
 
@@ -60,6 +61,10 @@ const form = document.getElementById('form');
 const cartItems = JSON.parse(localStorage.getItem('panier')) || []; 
 const postUrlAPI = "http://localhost:3000/api/cameras/order";
 const totalCartCost = document.getElementById('total-cart');
+const sendForm = document.getElementById('sendForm');
+
+
+
 function sendData() {
 	event.preventDefault();
 	let lastName = document.getElementById('lastName').value; // Valeur des inputs du formulaire
@@ -68,40 +73,45 @@ function sendData() {
 	let city = document.getElementById('city').value;
 	let email = document.getElementById('email').value;
 
-	let contact = { lastName, firstName, address, city, email }; // Objet contenant les inputs du formulaire
-
-	let products = []; // Array contenant les informations du panier
-
-	cartItems.forEach(item => {
-		products.push(item.id); // Utilise la méthode .push pour chaque item du panier
-	})
-
-	const request = new Request(postUrlAPI, {
-		method: 'POST',
-		body: JSON.stringify({contact, products}),
-		headers: new Headers ({
-			'Accept' : 'application/json',
-			'Content-Type' : 'application/json'
-		})
-	});
-	fetch(request)
-	.then(response => response.json()) // Utilisation de fetch qui renvoie une promesse avec en paramètre la réponse en JSON
-	.then( (response) => {
-		if (form.checkValidity() === false) { // La fonction checkValidity vérifie si le formulaire est valide
-			const contact = document.getElementById('contact')
-			const alert = contact.appendChild(document.createElement('div')) // Crée un bloc d'affichage
-			alert.classList.add('error') // Traitement CSS du message d'erreur
-			alert.innerText = 'Veuillez vérifier les champs du formulaire.' // Message pour l'utilisateur
-		} else if (form.checkValidity() === true) { //Si le formulaire est valide
-			let getOrderId = response.orderId; //On obient un id de la commande
-			let getTotalCost = totalCartCost.innerHTML;
-			localStorage.clear(); // Le localStorage est vidé
-			let orderRecap = { getOrderId, getTotalCost }; // Un objet récapitulatif de la commande est crée
-
-			localStorage.setItem("orderConfirmed", JSON.stringify(orderRecap)); //Stock l'objet recapitulatif dans le localStorage pour l'afficher dans la page de confirmation
-			setTimeout(function() {
-				window.location = "confirmation.html"; //Redirection vers la page de confirmation
-			}, 3000)
+		if (panier == null || totalCartCost.innerText === '0 €') {
+			alert("Votre panier est vide. Veuillez retourner sur la page d'accueil.")
 		}
-	})
+		
+		else if (form.checkValidity() === false) { // La fonction checkValidity vérifie si le formulaire est valide
+			const alert = document.getElementById('invalid-form'); // Sélection du bloc d'affichage
+			alert.innerText = 'Veuillez vérifier les champs du formulaire.' // Message pour l'utilisateur
+
+		} else if (form.checkValidity() === true) { //Si le formulaire est valide
+			let contact = { lastName, firstName, address, city, email }; // Objet contenant les inputs du formulaire
+
+			let products = []; // Array contenant les informations du panier
+
+			cartItems.forEach(item => {
+				products.push(item.id); // Utilise la méthode .push pour chaque item du panier
+				})
+
+			let confirm = {contact, products};
+			let order = JSON.stringify(confirm);
+
+				
+			let request = new XMLHttpRequest();
+			request.onreadystatechange = function () {
+				if (this.readyState == XMLHttpRequest.DONE) {
+					let response = JSON.parse(request.responseText);
+					let getOrderId = response.orderId; //On obient un id de la commande
+					let getTotalCost = totalCartCost.innerHTML;
+					localStorage.clear(); // Le localStorage est vidé
+					let orderRecap = { getOrderId, getTotalCost }; // Un objet récapitulatif de la commande est crée
+
+					localStorage.setItem("orderConfirmed", JSON.stringify(orderRecap)); //Stock l'objet recapitulatif dans le localStorage pour l'afficher dans la page de confirmation
+					setTimeout(function() {
+						window.location = "confirmation.html"; //Redirection vers la page de confirmation
+						}, 3000)
+				}
+			}
+			request.open("POST", postUrlAPI);
+			request.setRequestHeader("Content-Type", "application/json");
+			request.send(order)
+		}
 }
+
